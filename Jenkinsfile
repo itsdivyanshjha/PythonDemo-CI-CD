@@ -11,7 +11,7 @@ pipeline {
         stage('Build and Test on Development Server') {
             steps {
                 sh '''
-                ssh -i /var/lib/jenkins/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@13.127.73.63 << EOF
+                ssh -i /home/ubuntu/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@13.127.73.63 << EOF
                     cd ~/my-python-project
                     git pull origin main
                     python3 -m venv venv
@@ -25,7 +25,7 @@ pipeline {
         stage('Deploy to Production Server') {
             steps {
                 sh '''
-                ssh -i /var/lib/jenkins/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@3.111.197.175 << EOF
+                ssh -i /home/ubuntu/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@3.111.197.175 << EOF
                     cd ~/my-python-project
                     git pull origin main
                     python3 -m venv venv
