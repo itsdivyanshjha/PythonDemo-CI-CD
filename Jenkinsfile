@@ -4,7 +4,7 @@ pipeline {
     environment {
         DEV_SERVER = 'ubuntu@13.127.73.63'
         PROD_SERVER = 'ubuntu@3.111.197.175'
-        SSH_KEY_PATH = '/home/ubuntu/.ssh/id_rsa.pub'
+        SSH_KEY_PATH = '/home/ubuntu/.ssh/id_rsa'
         REPO_URL = 'https://github.com/itsdivyanshjha/my-python-project.git'
         PROJECT_DIR = '~/my-python-project'
     }
