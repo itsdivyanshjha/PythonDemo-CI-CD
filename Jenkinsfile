@@ -28,7 +28,6 @@ pipeline {
                         cd ${env.PROJECT_DIR}
                         git pull origin main
                         python3 -m venv venv
-                        source venv/bin/activate
                         pip install -r requirements.txt
                         python -m unittest discover || exit 1
                     EOF
@@ -53,7 +52,6 @@ pipeline {
                         cd ${env.PROJECT_DIR}
                         git pull origin main
                         python3 -m venv venv
-                        source venv/bin/activate
                         pip install -r requirements.txt
                         nohup python app.py &
                     EOF
